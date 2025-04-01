@@ -12,6 +12,7 @@ class ChatScreen extends StatelessWidget {
             backgroundImage: NetworkImage('https://facts.net/wp-content/uploads/2024/09/50-facts-about-billie-eilish-1726724720.jpg'),
           ),
         ),
+        
         title: Text('Billie eilish'),
         centerTitle: true,
       ),
