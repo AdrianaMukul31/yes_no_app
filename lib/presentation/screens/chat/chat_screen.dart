@@ -1,3 +1,4 @@
+import 'package:chat_app_yes_no/domain/entities/message.dart';
 import 'package:chat_app_yes_no/presentation/providers/chat_provider.dart';
 import 'package:chat_app_yes_no/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:chat_app_yes_no/presentation/widgets/chat/my_message_bubble.dart';
@@ -43,9 +44,13 @@ class _ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
-                  return (index % 2 == 0)
+                  //instancia que sabra de quien es el mensaje
+                  final message = chatProvider.messageList[index];
+                  //si es par es de ella (si el residuo es 0), (si el residuo no es cero) o impar es mio. El porcentaje es el residuo
+                  //return (index % 2 == 0)
+                  return (message.fromWho == FromWho.hers)
                       ? const HerMessageBubble()
-                      : const MyMessageBubble();
+                      : MyMessageBubble(message : message);
                 },
               ),
             ),

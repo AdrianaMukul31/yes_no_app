@@ -1,7 +1,10 @@
+import 'package:chat_app_yes_no/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+  //variable de la identidad atomica Message
+  final Message message;
+  const MyMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class MyMessageBubble extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Hola, ¿cómo estas?',
+              message.text,
               style: TextStyle(color: Colors.white),
             ),
           ),
