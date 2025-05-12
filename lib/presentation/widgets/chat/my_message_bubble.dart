@@ -24,7 +24,7 @@ class MyMessageBubble extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 5,
         )
       ],
     );

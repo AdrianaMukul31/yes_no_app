@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MessageFieldBox extends StatelessWidget {
-  const MessageFieldBox({super.key});
+  final ValueChanged<String> onValue;
+  const MessageFieldBox({super.key, required this.onValue});
 
   @override
   Widget build(BuildContext context) {
     final textController = TextEditingController();
+    // TEXTEDITING ....controlar lo que el usuario pone en donde se escribe el msj, notifica pero todavia no se ve
     final FocusNode focusNode = FocusNode();
+    
 
     //final colors = Theme.of(context).colorScheme;
     final outlineInputBorder = UnderlineInputBorder(
@@ -23,8 +26,8 @@ class MessageFieldBox extends StatelessWidget {
         icon: Icon(Icons.send_outlined),
         onPressed: () {
           final textValue = textController.value.text;
-          print('button: $textValue');
           textController.clear();
+          onValue(textValue);
         },
       ),
     );
@@ -34,12 +37,14 @@ class MessageFieldBox extends StatelessWidget {
         focusNode.unfocus();
       },
       focusNode: focusNode,
-      controller: textController,
+      controller: textController, //manejar los datos que se lleve l ususario
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
-        print('submit value: $value');
-        textController.clear();
-        focusNode.requestFocus();
+        //print('submit value: $value');
+        textController.clear(); //limpiar el campo
+        focusNode.requestFocus(); // la flecha que esta como parpadeando en el campo para escribir el msj o 
+        //
+        onValue(value);
       },
     );
   }

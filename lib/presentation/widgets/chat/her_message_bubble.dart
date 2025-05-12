@@ -13,7 +13,7 @@ class HerMessageBubble extends StatelessWidget {
           decoration: BoxDecoration(
               color: colors.secondary, borderRadius: BorderRadius.circular(20)),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical:10),
             child: Text(
               'Hola',
               style: TextStyle(color: Colors.white),
@@ -26,7 +26,7 @@ class HerMessageBubble extends StatelessWidget {
         _ImageBubble(), // Aqui se va a mostrar la imagen
 
         SizedBox(
-          height: 10,
+          height: 5,
         )
         // Todo: imagen
       ],
