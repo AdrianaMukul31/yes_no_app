@@ -51,7 +51,7 @@ class _ChatView extends StatelessWidget {
                   //si es par es de ella (si el residuo es 0), (si el residuo no es cero) o impar es mio. El porcentaje es el residuo
                   //return (index % 2 == 0)
                   return (message.fromWho == FromWho.hers)
-                      ? const HerMessageBubble()
+                      ?  HerMessageBubble(message: message)
                       : MyMessageBubble(message : message);
                 },
               ),
