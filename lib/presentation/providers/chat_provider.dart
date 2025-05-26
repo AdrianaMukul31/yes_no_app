@@ -1,6 +1,13 @@
 import 'package:chat_app_yes_no/config/helpers/get_yes_no_answer.dart';
 import 'package:chat_app_yes_no/domain/entities/message.dart';
 import 'package:flutter/material.dart';
+//PImagina que tienes una app con varias pantallas:
+
+    //En una pantalla eliges un café 🍵
+
+    //En otra quieres ver el total del carrito 🛒
+
+//Con Provider, puedes guardar ese café en un lugar central (como una "mochila" de datos) y que cualquier parte de la app lo pueda usar o actualizar.
 
 class ChatProvider extends ChangeNotifier {
   final ScrollController chatScrollController = ScrollController();
@@ -12,7 +19,7 @@ class ChatProvider extends ChangeNotifier {
   Future<void> sendMessage(String text) async {
         //hace que los msj vacios no se envien metodo trim recorte
      if (text.trim().isEmpty) return;   
-     final  newMessage = Message(text: text.trim(), fromWho: FromWho.me); // si empezamos con espacios los borra o espacios extra por eso se una el trim
+     final  newMessage = Message(text: text.trim(), fromWho: FromWho.me, sentAt: DateTime.now(),); // si empezamos con espacios los borra o espacios extra por eso se una el trim
      //agregar un nuevo mensaje a la lista
      messageList.add(newMessage);
 

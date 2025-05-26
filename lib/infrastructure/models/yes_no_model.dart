@@ -1,5 +1,6 @@
 
 import 'package:chat_app_yes_no/domain/entities/message.dart';
+import 'package:flutter/widgets.dart';
 
 class YesNoModel {
     String answer;
@@ -17,13 +18,14 @@ class YesNoModel {
         forced: json["forced"],
         image: json["image"],
     );
-   Message toMessageEntity () => Message(
-    text: answer == 'yes' 
-    ?  'Sí'
-    : answer == 'no'
-    ? 'No'
-    : 'Quizás',   
-    fromWho: FromWho.hers,
-    imageUrl: image
-    );
+   Message toMessageEntity() => Message(
+  text: answer == 'yes' 
+      ? 'Tal vez'
+      : answer == 'no'
+        ? 'Definitivamente no'
+        : 'Puede ser',
+  fromWho: FromWho.hers,
+  imageUrl: image,
+  sentAt: DateTime.now(),
+);
 }

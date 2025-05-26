@@ -21,7 +21,7 @@ class ChatScreen extends StatelessWidget {
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1bNUUz_1tMH69FisHpqEUVOdmvjMgQY5Yg&s'),
           ),
         ),
-        title: Text('Emma ✨'),
+        title: Text('Valeria'),
         centerTitle: false,
       ),
       //*CONTINUACION VIDEO 4
